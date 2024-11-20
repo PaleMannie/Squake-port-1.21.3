@@ -1,6 +1,7 @@
 {
   "key.categories.squake": "Squake",
   "squake.key.toggle": "Quake Bewegungssystem umschalten",
-  "squake.key.toggle.enabled": "Quake-Bewegungsmodus AN",
-  "squake.key.toggle.disabled": "Quake-Bewegungsmodus AUS"
+  "squake.key.toggle.enabled": "AN",
+  "squake.key.toggle.disabled": "AUS",
+  "squake.key.toggle.message" : "Quake-Bewegungsmodus ["
 }

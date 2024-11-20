@@ -33,11 +33,12 @@ public class ToggleKeyHandler
         if(TOGGLE_KEY.consumeClick())
         {
             ModConfig.setEnabled(!ModConfig.isEnabled());
-            var feedback = MutableComponent.create(new TranslatableContents(ModConfig.isEnabled() ? "squake.key.toggle.enabled" : "squake.key.toggle.disabled", null, new Object[0]));
+            var message = MutableComponent.create(new TranslatableContents("squake.key.toggle.message", null, new Object[0]));
+            var onOrOff = MutableComponent.create(new TranslatableContents(ModConfig.isEnabled() ? "squake.key.toggle.enabled" : "squake.key.toggle.disabled", null, new Object[0])).withStyle(ModConfig.isEnabled() ? ChatFormatting.GREEN : ChatFormatting.DARK_RED);
             var t1 = MutableComponent.create(new PlainTextContents.LiteralContents("["));
             var t2 = MutableComponent.create(new PlainTextContents.LiteralContents("Squake")).withStyle(ChatFormatting.GOLD);
             var t3 = MutableComponent.create(new PlainTextContents.LiteralContents("] "));
-            Minecraft.getInstance().gui.getChat().addMessage(t1.append(t2).append(t3).append(feedback));
+            Minecraft.getInstance().gui.getChat().addMessage(t1.append(t2).append(t3).append(message).append(onOrOff).append(t3));
         }
     }
 }

@@ -46,7 +46,7 @@ public abstract class MixinPlayerEntity
 /********************************************************************************************
 *   jumpFromGround has been removed by Mojang I believe as I didn't find it anywhere
 *   else than in LivingEntity.
-*   re-adding the method and only put in there what was injected before (plus super thingy).
+*   re-adding the method and only put in there what was injected before.
 *********************************************************************************************/
     @Unique
     public void jumpFromGround() {
