@@ -304,7 +304,9 @@ public class SquakeClientPlayer {
     {
         double motionY = Motions.getMotionY(player);
 
-        if(player.level().isClientSide && (!player.level().isLoaded(new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ())) || player.level().getChunk(new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ())).getPersistedStatus() != ChunkStatus.FULL))
+        ///The commented out condition caused the physics to break over and under the build limit while Quake mode was on.
+        /// Fixed now. Keeping it commented for archiving purposes idk.
+        if(player.level().isClientSide && (/*!player.level().isLoaded(new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ())) ||*/ player.level().getChunk(new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ())).getPersistedStatus() != ChunkStatus.FULL))
         {
             if(player.getY() > 0.0D)
             {
